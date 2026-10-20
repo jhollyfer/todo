@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/index.css" rel="stylesheet" />
+    <title>Tarefas</title>
+  </head>
+  <body>
+    <main id="aplicativo" class="bg-white shadow-md rounded-lg px-3 py-2 mb-4">
+      <header id="cabecalho">
+        <h1 id="titulo-aplicativo" class="text-gray-700 text-lg font-semibold py-2 px-2">
+          Tarefas
+        </h1>
+      </header>
+
+      <form id="formulario-pesquisa" role="search">
+        <label for="campo-pesquisa" class="sr-only">Pesquisar tarefas</label>
+        <input
+          id="campo-pesquisa"
+          name="pesquisa"
+          type="search"
+          placeholder="Pesquisar"
+          autocomplete="off"
+          class="w-full rounded-md bg-gray-200 text-gray-700 leading-tight focus:outline-none py-2 px-2"
+        />
+      </form>
+
+      <section id="secao-tarefas" aria-label="Lista de tarefas">
+        <ul id="lista-tarefas" class="py-3 text-sm"></ul>
+        <p id="mensagem-vazia" class="hidden text-sm text-gray-500 px-2 py-3">
+          Nenhuma tarefa encontrada.
+        </p>
+      </section>
+
+      <footer
+        id="rodape"
+        class="bg-gray-200 text-sm py-2 px-3 -mx-3 -mb-2 rounded-b-lg"
+      >
+        <form id="formulario-tarefa" class="flex items-center gap-2">
+          <label for="campo-tarefa" class="sr-only">Nova tarefa</label>
+          <input
+            id="campo-tarefa"
+            name="titulo"
+            type="text"
+            placeholder="Nova tarefa"
+            autocomplete="off"
+            required
+            class="grow rounded-md bg-white border border-gray-300 text-gray-700 leading-tight focus:outline-none focus:border-blue-500 py-2 px-2"
+          />
+          <button
+            id="botao-adicionar"
+            type="submit"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Adicionar
+          </button>
+        </form>
+      </footer>
+    </main>
+
+    <template id="modelo-tarefa">
+      <li class="flex items-center gap-2 px-2 py-1" data-id="">
+        <input type="checkbox" class="marcar-tarefa" aria-label="Concluir tarefa" />
+        <span class="titulo-tarefa grow font-medium"></span>
+        <input
+          type="text"
+          class="campo-edicao hidden grow rounded border border-gray-300 px-2 py-1 focus:outline-none focus:border-blue-500"
+          aria-label="Editar tarefa"
+        />
+        <button type="button" class="botao-editar text-blue-600 hover:underline">
+          Editar
+        </button>
+        <button type="button" class="botao-excluir text-red-600 hover:underline">
+          Excluir
+        </button>
+      </li>
+    </template>
+
+    <script type="module" src="/src/index.ts"></script>
+  </body>
+</html>
