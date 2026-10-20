@@ -7,7 +7,7 @@ npm install --global tsx pnpm
 
 sudo rm -rf ./todo
 
-git clone https://github.com/jhollyfer/todo.git
+git clone -b main https://github.com/jhollyfer/todo.git
 
 cd ./todo
 
